@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenHarvest — Organic Fruit Tree Cultivation Guide</title>
+<meta name="description" content="Real-world organic fruit tree cultivation guides written by farmers for farmers. Mango, Banana, Coconut, Avocado and more — naturally grown, globally shared.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --earth: #2c1810;
+  --bark: #5c3d2e;
+  --moss: #3d6b4f;
+  --leaf: #5a8c6a;
+  --mint: #89c4a0;
+  --lime: #c8e6c9;
+  --cream: #faf6f0;
+  --parchment: #f0ead8;
+  --gold: #c9963a;
+  --rust: #a0522d;
+  --ink: #1c2b1e;
+  --mist: #edf4ef;
+  --white: #ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
+
+/* NAV */
+.topstrip{background:var(--earth);padding:.4rem 4rem;display:flex;justify-content:space-between;align-items:center;}
+.topstrip span{color:rgba(255,255,255,.45);font-size:.72rem;letter-spacing:.08em;}
+.topstrip a{color:var(--mint);font-size:.72rem;text-decoration:none;margin-left:1.5rem;}
+header{background:var(--cream);border-bottom:2px solid var(--earth);padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(44,24,16,.08);}
+.logo{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--earth);display:flex;align-items:center;gap:.4rem;cursor:pointer;}
+.logo em{font-style:italic;color:var(--moss);}
+nav ul{display:flex;gap:2rem;list-style:none;}
+nav a{font-size:.82rem;font-weight:600;text-decoration:none;color:var(--ink);text-transform:uppercase;letter-spacing:.08em;transition:color .2s;}
+nav a:hover{color:var(--moss);}
+
+/* HERO */
+.hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}
+.hero-left{background:linear-gradient(155deg,var(--earth) 0%,var(--bark) 50%,#3d2b1f 100%);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.hero-left::before{content:'';position:absolute;top:-80px;right:-80px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(137,196,160,.1) 0%,transparent 65%);}
+.hero-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.8rem;}
+.hero-eyebrow span{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mint);}
+.hero-eyebrow::before{content:'';width:30px;height:1px;background:var(--mint);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:var(--cream);line-height:1.08;margin-bottom:1.4rem;}
+.hero h1 em{font-style:italic;color:var(--mint);}
+.hero-sub{font-family:'Lora',serif;font-size:1.1rem;font-style:italic;color:rgba(250,246,240,.6);line-height:1.75;max-width:440px;margin-bottom:2.5rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-main{background:var(--mint);color:var(--earth);padding:.85rem 2rem;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(137,196,160,.35);}
+.btn-ghost{background:transparent;color:var(--cream);padding:.85rem 2rem;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(250,246,240,.25);cursor:pointer;text-decoration:none;transition:border-color .2s,color .2s;}
+.btn-ghost:hover{border-color:var(--mint);color:var(--mint);}
+.hero-nums{display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(250,246,240,.1);}
+.hnum span{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--gold);display:block;}
+.hnum small{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(250,246,240,.4);}
+.hero-right{background:var(--parchment);padding:3rem;display:flex;flex-direction:column;gap:1.2rem;justify-content:center;}
+.hero-card{background:var(--white);padding:1.6rem;border-left:4px solid var(--moss);cursor:pointer;text-decoration:none;display:block;color:inherit;transition:transform .2s,box-shadow .2s;}
+.hero-card:hover{transform:translateX(5px);box-shadow:3px 3px 18px rgba(61,107,79,.12);}
+.hero-card.gold{border-left-color:var(--gold);}
+.hero-card.rust{border-left-color:var(--rust);}
+.hcard-tag{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:var(--moss);font-weight:700;margin-bottom:.4rem;}
+.hcard-tag.gold{color:var(--gold);}
+.hcard-tag.rust{color:var(--rust);}
+.hcard-title{font-family:'Lora',serif;font-size:1rem;font-weight:600;color:var(--earth);line-height:1.35;margin-bottom:.3rem;}
+.hcard-meta{font-size:.72rem;color:#999;}
+
+/* TICKER */
+.ticker{background:var(--gold);padding:.6rem 0;overflow:hidden;}
+.ticker-track{display:flex;gap:3.5rem;white-space:nowrap;animation:tick 35s linear infinite;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--earth);}
+.ticker-track span::before{content:'✦  ';}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* SECTIONS */
+.section{padding:5rem 4rem;}
+.sec-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.25em;color:var(--moss);font-weight:700;margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem;}
+.sec-label::before{content:'●';font-size:.5rem;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:var(--earth);line-height:1.1;margin-bottom:1rem;}
+.sec-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;}
+.view-all{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--moss);text-decoration:none;border-bottom:1px solid var(--moss);padding-bottom:2px;}
+
+/* ARTICLE GRID */
+.articles-bg{background:var(--cream);}
+.art-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1.5rem;}
+.art-card{background:var(--white);overflow:hidden;cursor:pointer;text-decoration:none;display:block;color:inherit;transition:transform .3s,box-shadow .3s;}
+.art-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(44,24,16,.1);}
+.art-card.big{grid-row:span 2;}
+.art-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;position:relative;}
+.art-card.big .art-thumb{height:280px;font-size:7rem;}
+.bg-mango{background:linear-gradient(135deg,#fff8e1,#ffb30055);}
+.bg-banana{background:linear-gradient(135deg,#fffde7,#fdd83555);}
+.bg-coconut{background:linear-gradient(135deg,#e8f5e9,#66bb6a55);}
+.bg-papaya{background:linear-gradient(135deg,#fff3e0,#fb8c0055);}
+.bg-jackfruit{background:linear-gradient(135deg,#f1f8e9,#8bc34a55);}
+.bg-avocado{background:linear-gradient(135deg,#e8f5e9,#2e7d3255);}
+.bg-guava{background:linear-gradient(135deg,#fce4ec,#e91e6355);}
+.bg-pomegranate{background:linear-gradient(135deg,#fbe9e7,#bf360c55);}
+.bg-fig{background:linear-gradient(135deg,#f3e5f5,#7b1fa255);}
+.bg-moringa{background:linear-gradient(135deg,#e0f2f1,#00695c55);}
+.art-body{padding:1.4rem;}
+.art-cat{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:var(--moss);font-weight:700;margin-bottom:.4rem;}
+.art-title{font-family:'Lora',serif;font-weight:700;color:var(--earth);line-height:1.25;margin-bottom:.6rem;font-size:.95rem;}
+.art-card.big .art-title{font-size:1.4rem;}
+.art-excerpt{font-size:.85rem;line-height:1.6;color:#5a6a5e;margin-bottom:1rem;}
+.art-footer{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;border-top:1px solid var(--mist);}
+.art-read{font-size:.72rem;color:#aaa;}
+.art-cta{font-size:.72rem;font-weight:700;color:var(--moss);text-transform:uppercase;letter-spacing:.08em;}
+
+/* CATS */
+.cats-bg{background:var(--earth);}
+.cats-bg .sec-title{color:var(--cream);}
+.cats-bg .sec-label{color:var(--mint);}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem;}
+.cat-item{border:1px solid rgba(137,196,160,.2);padding:2rem 1.2rem;text-align:center;cursor:pointer;transition:background .3s,border-color .3s,transform .3s;text-decoration:none;}
+.cat-item:hover{background:rgba(137,196,160,.1);border-color:var(--mint);transform:translateY(-3px);}
+.cat-item .icon{font-size:2.2rem;display:block;margin-bottom:.8rem;}
+.cat-item h3{font-family:'Lora',serif;font-size:.95rem;color:var(--cream);margin-bottom:.2rem;}
+.cat-item p{font-size:.7rem;color:rgba(137,196,160,.65);}
+
+/* PHILOSOPHY */
+.phil-bg{background:var(--parchment);}
+.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.phil-text p{font-family:'Lora',serif;font-size:1.05rem;line-height:1.85;color:#4a3728;margin-bottom:1.2rem;}
+.phil-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.pillar{background:var(--white);padding:1.3rem;border-top:3px solid var(--moss);}
+.pillar h4{font-family:'Lora',serif;font-size:.95rem;color:var(--earth);margin-bottom:.4rem;}
+.pillar p{font-size:.82rem;color:#6a5a50;line-height:1.5;}
+.phil-visual{position:relative;}
+.big-leaf{width:360px;height:360px;background:linear-gradient(135deg,var(--moss),var(--earth));border-radius:70% 30% 70% 30%/30% 70% 30% 70%;display:flex;align-items:center;justify-content:center;font-size:11rem;margin:0 auto;box-shadow:0 30px 70px rgba(61,107,79,.25);animation:breathe 5s ease-in-out infinite;}
+@keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
+
+/* NEWSLETTER */
+.nl-bg{background:var(--moss);text-align:center;padding:5rem 4rem;}
+.nl-bg h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--white);margin-bottom:.8rem;}
+.nl-bg p{color:rgba(255,255,255,.7);font-size:1rem;margin-bottom:2.5rem;}
+.nl-form{display:flex;max-width:460px;margin:0 auto;}
+.nl-input{flex:1;padding:.95rem 1.4rem;border:none;outline:none;font-family:'Source Sans 3',sans-serif;font-size:.9rem;background:var(--white);}
+.nl-btn{background:var(--earth);color:var(--white);border:none;padding:.95rem 1.6rem;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'Source Sans 3',sans-serif;transition:background .2s;}
+.nl-btn:hover{background:var(--bark);}
+
+/* FOOTER */
+footer{background:var(--ink);padding:4rem 4rem 2rem;}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07);}
+.ft-brand .logo{color:var(--cream);font-size:1.4rem;margin-bottom:1rem;}
+.ft-brand p{font-size:.83rem;line-height:1.7;color:rgba(255,255,255,.35);}
+.ft-col h4{font-size:.68rem;text-transform:uppercase;letter-spacing:.2em;color:var(--mint);margin-bottom:1.2rem;}
+.ft-col ul{list-style:none;}
+.ft-col li{margin-bottom:.6rem;}
+.ft-col a{color:rgba(255,255,255,.4);text-decoration:none;font-size:.83rem;transition:color .2s;}
+.ft-col a:hover{color:var(--mint);}
+.ft-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.ft-bottom p{color:rgba(255,255,255,.2);font-size:.75rem;}
+
+/* ARTICLE PAGE */
+.art-page{display:none;}
+.art-page.on{display:block;}
+.main-wrap.off{display:none;}
+.art-pg-header{background:linear-gradient(155deg,var(--earth),var(--bark));padding:6rem 4rem 3.5rem;}
+.back-btn{display:inline-flex;align-items:center;gap:.5rem;background:none;border:none;color:var(--mint);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;font-family:'Source Sans 3',sans-serif;margin-bottom:2rem;}
+.back-btn:hover{color:var(--white);}
+.art-badge{display:inline-block;background:rgba(137,196,160,.18);border:1px solid rgba(137,196,160,.35);color:var(--mint);padding:.28rem .85rem;font-size:.67rem;text-transform:uppercase;letter-spacing:.2em;margin-bottom:1.2rem;}
+.art-pg-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:900;color:var(--cream);line-height:1.1;max-width:800px;margin-bottom:1.2rem;}
+.art-pg-sub{font-family:'Lora',serif;font-style:italic;font-size:1.1rem;color:rgba(250,246,240,.55);max-width:620px;margin-bottom:1.8rem;}
+.art-pg-meta{display:flex;gap:2rem;color:rgba(250,246,240,.35);font-size:.77rem;}
+.art-content{max-width:780px;margin:0 auto;padding:4rem 2rem;}
+.art-content h2{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:700;color:var(--earth);margin:2.5rem 0 1rem;padding-left:1rem;border-left:4px solid var(--moss);}
+.art-content h3{font-family:'Lora',serif;font-size:1.2rem;font-weight:600;color:var(--moss);margin:1.8rem 0 .7rem;}
+.art-content p{font-family:'Lora',serif;font-size:1.05rem;line-height:1.88;color:#2e3d30;margin-bottom:1.3rem;}
+.art-content ul,.art-content ol{margin:1rem 0 1.5rem 1.5rem;}
+.art-content li{font-family:'Lora',serif;font-size:1rem;line-height:1.7;color:#2e3d30;margin-bottom:.5rem;}
+.callout{background:var(--mist);border-left:4px solid var(--moss);padding:1.4rem 1.8rem;margin:2rem 0;}
+.callout strong{color:var(--earth);display:block;margin-bottom:.4rem;font-size:.9rem;}
+.callout p{font-size:.93rem !important;margin:0 !important;color:#3a5a3e !important;}
+.data-tbl{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.9rem;}
+.data-tbl th{background:var(--earth);color:var(--cream);padding:.85rem 1.1rem;text-align:left;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;}
+.data-tbl td{padding:.75rem 1.1rem;border-bottom:1px solid var(--mist);}
+.data-tbl tr:hover td{background:var(--mist);}
+.tip-boxes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;}
+.tip-box{background:var(--white);border:1px solid var(--lime);padding:1.2rem;}
+.tip-box .ti{font-size:1.4rem;margin-bottom:.5rem;}
+.tip-box strong{display:block;color:var(--earth);font-size:.88rem;margin-bottom:.3rem;}
+.tip-box p{font-size:.82rem !important;margin:0 !important;color:#5a6a5e !important;line-height:1.5 !important;}
+
+/* COOKIE BANNER */
+#cookieBanner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1c2b1e;border-top:3px solid var(--moss);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;box-shadow:0 -6px 28px rgba(0,0,0,.25);transform:translateY(100%);animation:slideUp .5s ease 1.2s forwards;}
+@keyframes slideUp{to{transform:translateY(0);}}
+.ck-left{display:flex;align-items:center;gap:.9rem;flex:1;min-width:240px;}
+.ck-icon{font-size:1.8rem;flex-shrink:0;}
+.ck-text h4{font-family:'Lora',serif;font-size:.95rem;color:var(--cream);margin-bottom:.15rem;}
+.ck-text p{font-size:.75rem;color:rgba(250,246,240,.5);line-height:1.4;}
+.ck-text a{color:var(--mint);}
+.ck-btns{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center;}
+.ck-accept{background:var(--moss);color:var(--white);border:none;cursor:pointer;padding:.65rem 1.4rem;font-size:.8rem;font-weight:700;font-family:'Source Sans 3',sans-serif;transition:background .2s;}
+.ck-accept:hover{background:var(--leaf);}
+.ck-reject{background:transparent;color:rgba(250,246,240,.55);border:1px solid rgba(250,246,240,.2);cursor:pointer;padding:.65rem 1.1rem;font-size:.8rem;font-family:'Source Sans 3',sans-serif;transition:border-color .2s,color .2s;}
+.ck-reject:hover{border-color:rgba(250,246,240,.5);color:var(--white);}
+.ck-settings{background:transparent;color:var(--mint);border:1px solid rgba(137,196,160,.3);cursor:pointer;padding:.65rem 1.1rem;font-size:.8rem;font-family:'Source Sans 3',sans-serif;transition:border-color .2s;}
+.ck-settings:hover{border-color:var(--mint);}
+#ckPanel{position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#1c2b1e;border-top:3px solid var(--gold);padding:2rem;display:none;max-height:80vh;overflow-y:auto;}
+#ckPanel.on{display:block;animation:slideUp .3s ease;}
+.ckp-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.ckp-head h3{font-family:'Lora',serif;font-size:1.2rem;color:var(--cream);}
+.ckp-close{background:none;border:none;color:rgba(250,246,240,.4);font-size:1.4rem;cursor:pointer;line-height:1;}
+.ckp-close:hover{color:var(--white);}
+.ck-row{display:flex;justify-content:space-between;align-items:flex-start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.06);gap:2rem;}
+.ck-row:last-of-type{border:none;}
+.ck-row-info h4{color:var(--cream);font-size:.92rem;margin-bottom:.25rem;}
+.always-on{font-size:.62rem;background:rgba(137,196,160,.2);color:var(--mint);padding:.12rem .45rem;margin-left:.4rem;vertical-align:middle;}
+.ck-row-info p{color:rgba(250,246,240,.4);font-size:.78rem;line-height:1.5;}
+.toggle{position:relative;width:46px;height:25px;flex-shrink:0;margin-top:2px;}
+.toggle input{opacity:0;width:0;height:0;}
+.tslider{position:absolute;inset:0;background:rgba(255,255,255,.12);cursor:pointer;transition:.3s;border-radius:25px;}
+.tslider::before{content:'';position:absolute;width:19px;height:19px;left:3px;bottom:3px;background:var(--white);transition:.3s;border-radius:50%;}
+.toggle input:checked+.tslider{background:var(--moss);}
+.toggle input:checked+.tslider::before{transform:translateX(21px);}
+.toggle input:disabled+.tslider{opacity:.45;cursor:not-allowed;}
+.ckp-btns{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
+.ckp-save{background:var(--moss);color:var(--white);border:none;cursor:pointer;padding:.75rem 1.8rem;font-size:.82rem;font-weight:700;font-family:'Source Sans 3',sans-serif;}
+.ckp-all{background:var(--gold);color:var(--earth);border:none;cursor:pointer;padding:.75rem 1.8rem;font-size:.82rem;font-weight:700;font-family:'Source Sans 3',sans-serif;}
+#ckToast{position:fixed;bottom:2rem;right:2rem;z-index:11000;background:var(--moss);color:var(--white);padding:.75rem 1.4rem;font-size:.82rem;font-family:'Source Sans 3',sans-serif;display:none;animation:fadeInOut 2.8s ease forwards;}
+@keyframes fadeInOut{0%{opacity:0;transform:translateY(8px);}15%{opacity:1;transform:translateY(0);}80%{opacity:1;}100%{opacity:0;}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .topstrip,header,.section,.nl-bg,footer{padding-left:1.5rem;padding-right:1.5rem;}
+  nav ul{display:none;}
+  .hero{grid-template-columns:1fr;}
+  .hero-right{display:none;}
+  .art-grid{grid-template-columns:1fr;}
+  .art-card.big{grid-row:auto;}
+  .cat-grid{grid-template-columns:repeat(2,1fr);}
+  .phil-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .ft-grid{grid-template-columns:1fr 1fr;}
+  .art-pg-header{padding:4rem 1.5rem 2rem;}
+  .art-content{padding:2rem 1.5rem;}
+  .tip-boxes{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ MAIN SITE ════════ -->
+<div class="main-wrap" id="mainWrap">
+
+<div class="topstrip">
+  <span>🌿 Organic Farming Knowledge — Grown From Experience</span>
+  <div><a href="#">About</a><a href="#">Write for Us</a><a href="#">Contact</a></div>
+</div>
+
+<header>
+  <div class="logo" onclick="goHome()">🌿 Green<em>Harvest</em></div>
+  <nav><ul>
+    <li><a href="#fruits">Fruit Trees</a></li>
+    <li><a href="#categories">Topics</a></li>
+    <li><a href="#philosophy">Our Approach</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+  </ul></nav>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span>Organic · Natural · Proven</span></div>
+    <h1>Farming Knowledge<br>From the <em>Ground Up</em></h1>
+    <p class="hero-sub">Real guides written from real fields. No chemicals, no shortcuts — just honest, organic wisdom that works in any corner of the world.</p>
+    <div class="hero-btns">
+      <a href="#fruits" class="btn-main">Read the Guides</a>
+      <a href="#philosophy" class="btn-ghost">Our Approach</a>
+    </div>
+    <div class="hero-nums">
+      <div class="hnum"><span>10</span><small>Fruit Tree Guides</small></div>
+      <div class="hnum"><span>100%</span><small>Organic Methods</small></div>
+      <div class="hnum"><span>Global</span><small>Audience</small></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <a href="#" onclick="openArt('mango');return false;" class="hero-card">
+      <div class="hcard-tag">🌟 Featured Guide</div>
+      <div class="hcard-title">Growing Mango Organically: What the Textbooks Don't Tell You</div>
+      <div class="hcard-meta">14 min read · Fruit Trees</div>
+    </a>
+    <a href="#" onclick="openArt('avocado');return false;" class="hero-card gold">
+      <div class="hcard-tag gold">🥑 Trending</div>
+      <div class="hcard-title">Avocado Cultivation: The Organic Way to Grow the World's Favourite Fruit</div>
+      <div class="hcard-meta">10 min read · Fruit Trees</div>
+    </a>
+    <a href="#" onclick="openArt('moringa');return false;" class="hero-card rust">
+      <div class="hcard-tag rust">🌱 Must Read</div>
+      <div class="hcard-title">Moringa: The Tree That Feeds, Heals, and Enriches Your Soil</div>
+      <div class="hcard-meta">8 min read · Superfoods</div>
+    </a>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Mango</span><span>Banana</span><span>Coconut</span><span>Papaya</span><span>Jackfruit</span><span>Avocado</span><span>Guava</span><span>Pomegranate</span><span>Fig</span><span>Moringa</span><span>Organic Farming</span><span>Bio-Pesticides</span><span>Compost</span><span>Soil Health</span><span>Mango</span><span>Banana</span><span>Coconut</span><span>Papaya</span><span>Jackfruit</span><span>Avocado</span><span>Guava</span><span>Pomegranate</span><span>Fig</span><span>Moringa</span><span>Organic Farming</span><span>Bio-Pesticides</span><span>Compost</span><span>Soil Health</span>
+  </div>
+</div>
+
+<!-- FRUIT ARTICLES -->
+<section class="section articles-bg" id="fruits">
+  <div class="sec-header">
+    <div>
+      <div class="sec-label">Organic Cultivation Guides</div>
+      <h2 class="sec-title">10 Fruit Tree Guides<br>Worth Bookmarking</h2>
+    </div>
+    <a href="#" class="view-all">All Articles →</a>
+  </div>
+  <div class="art-grid">
+    <a href="#" onclick="openArt('mango');return false;" class="art-card big reveal">
+      <div class="art-thumb bg-mango">🥭</div>
+      <div class="art-body">
+        <div class="art-cat">🌟 Featured · Organic Guide</div>
+        <div class="art-title" style="font-size:1.4rem">Growing Mango Organically: What the Textbooks Don't Tell You</div>
+        <div class="art-excerpt">After years of watching mango farmers struggle with chemical dependency and declining yields, we put together this no-nonsense guide to growing mangoes the way nature intended.</div>
+        <div class="art-footer"><span class="art-read">📖 14 min read</span><span class="art-cta">Read Guide →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('banana');return false;" class="art-card reveal">
+      <div class="art-thumb bg-banana">🍌</div>
+      <div class="art-body">
+        <div class="art-cat">Fruit Trees</div>
+        <div class="art-title">Banana Farming Without Chemicals: A Practical Guide</div>
+        <div class="art-footer"><span class="art-read">📖 9 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('coconut');return false;" class="art-card reveal">
+      <div class="art-thumb bg-coconut">🥥</div>
+      <div class="art-body">
+        <div class="art-cat">Fruit Trees</div>
+        <div class="art-title">Coconut Cultivation: Organic Methods That Actually Work</div>
+        <div class="art-footer"><span class="art-read">📖 10 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('papaya');return false;" class="art-card reveal">
+      <div class="art-thumb bg-papaya">🍈</div>
+      <div class="art-body">
+        <div class="art-cat">Fruit Trees</div>
+        <div class="art-title">Papaya: How to Get Your First Harvest in 9 Months, Organically</div>
+        <div class="art-footer"><span class="art-read">📖 7 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('jackfruit');return false;" class="art-card reveal">
+      <div class="art-thumb bg-jackfruit">🟢</div>
+      <div class="art-body">
+        <div class="art-cat">Fruit Trees</div>
+        <div class="art-title">Jackfruit: The Low-Maintenance Giant With Enormous Potential</div>
+        <div class="art-footer"><span class="art-read">📖 9 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('avocado');return false;" class="art-card reveal">
+      <div class="art-thumb bg-avocado">🥑</div>
+      <div class="art-body">
+        <div class="art-cat">🌍 Global Favourite</div>
+        <div class="art-title">Avocado Cultivation: The Organic Way to Grow the World's Favourite Fruit</div>
+        <div class="art-footer"><span class="art-read">📖 10 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('guava');return false;" class="art-card reveal">
+      <div class="art-thumb bg-guava">🍑</div>
+      <div class="art-body">
+        <div class="art-cat">Fruit Trees</div>
+        <div class="art-title">Guava: The Toughest Fruit Tree You'll Ever Love</div>
+        <div class="art-footer"><span class="art-read">📖 8 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('pomegranate');return false;" class="art-card reveal">
+      <div class="art-thumb bg-pomegranate">🫐</div>
+      <div class="art-body">
+        <div class="art-cat">Fruit Trees</div>
+        <div class="art-title">Pomegranate Farming: Ancient Fruit, Modern Organic Approach</div>
+        <div class="art-footer"><span class="art-read">📖 9 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('fig');return false;" class="art-card reveal">
+      <div class="art-thumb bg-fig">🫐</div>
+      <div class="art-body">
+        <div class="art-cat">Fruit Trees</div>
+        <div class="art-title">Fig Tree Cultivation: Drought-Tolerant, Chemical-Free and Rewarding</div>
+        <div class="art-footer"><span class="art-read">📖 8 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+    <a href="#" onclick="openArt('moringa');return false;" class="art-card reveal">
+      <div class="art-thumb bg-moringa">🌿</div>
+      <div class="art-body">
+        <div class="art-cat">🌱 Superfood Tree</div>
+        <div class="art-title">Moringa: The Tree That Feeds, Heals, and Enriches Your Soil</div>
+        <div class="art-footer"><span class="art-read">📖 8 min</span><span class="art-cta">Read →</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section cats-bg" id="categories">
+  <div class="sec-label" style="color:var(--mint)">Browse by Topic</div>
+  <h2 class="sec-title">Everything a Farmer<br>Needs to Know</h2>
+  <div class="cat-grid">
+    <a href="#fruits" class="cat-item"><span class="icon">🌳</span><h3>Fruit Trees</h3><p>10 Guides</p></a>
+    <a href="#" class="cat-item"><span class="icon">🥦</span><h3>Vegetables</h3><p>Coming Soon</p></a>
+    <a href="#" class="cat-item"><span class="icon">🌿</span><h3>Organic Methods</h3><p>Coming Soon</p></a>
+    <a href="#" class="cat-item"><span class="icon">🦠</span><h3>Bio-Agents</h3><p>Coming Soon</p></a>
+    <a href="#" class="cat-item"><span class="icon">🌾</span><h3>Soil Health</h3><p>Coming Soon</p></a>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section phil-bg" id="philosophy">
+  <div class="phil-grid">
+    <div class="phil-text reveal">
+      <div class="sec-label">Why We're Different</div>
+      <h2 class="sec-title">We Write From<br>the Field, Not a Lab</h2>
+      <p>There are thousands of agriculture websites out there. Most of them copy the same government bulletins, list the same chemical fertilizers, and give you the same generic advice that doesn't account for your soil, your climate, or your reality.</p>
+      <p>We believe that the best farming knowledge comes from farmers who have made mistakes, learned from them, and found what actually works. Every guide on this site is written with a global reader in mind — someone who may be farming in Kerala, Kenya, or Kansas.</p>
+      <p>That is why we focus exclusively on organic, universally applicable methods. No brand recommendations. No region-specific chemicals. Just honest, proven techniques that work with nature, not against it.</p>
+      <div class="phil-pillars">
+        <div class="pillar"><h4>🌍 Universal Methods</h4><p>Techniques that work in any country, any climate.</p></div>
+        <div class="pillar"><h4>🚫 No Chemicals</h4><p>Organic-only. We never recommend synthetic inputs.</p></div>
+        <div class="pillar"><h4>🧠 Honest Writing</h4><p>We tell you what works and what doesn't. No fluff.</p></div>
+        <div class="pillar"><h4>🌱 Bio-First</h4><p>Trichoderma, Pseudomonas, compost — nature's tools.</p></div>
+      </div>
+    </div>
+    <div class="phil-visual reveal">
+      <div class="big-leaf">🌿</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl-bg" id="newsletter">
+  <h2>One Email, Every Week 🌱</h2>
+  <p>Practical organic farming tips, seasonal guides and new articles — straight to your inbox. No spam, ever.</p>
+  <div class="nl-form">
+    <input class="nl-input" type="email" placeholder="Your email address...">
+    <button class="nl-btn">Subscribe</button>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <div class="logo">🌿 GreenHarvest</div>
+      <p>Honest organic farming knowledge for growers everywhere. From our fields to yours.</p>
+    </div>
+    <div class="ft-col"><h4>Fruit Trees</h4><ul>
+      <li><a href="#" onclick="openArt('mango');return false;">Mango</a></li>
+      <li><a href="#" onclick="openArt('banana');return false;">Banana</a></li>
+      <li><a href="#" onclick="openArt('coconut');return false;">Coconut</a></li>
+      <li><a href="#" onclick="openArt('avocado');return false;">Avocado</a></li>
+      <li><a href="#" onclick="openArt('moringa');return false;">Moringa</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>More Fruits</h4><ul>
+      <li><a href="#" onclick="openArt('papaya');return false;">Papaya</a></li>
+      <li><a href="#" onclick="openArt('jackfruit');return false;">Jackfruit</a></li>
+      <li><a href="#" onclick="openArt('guava');return false;">Guava</a></li>
+      <li><a href="#" onclick="openArt('pomegranate');return false;">Pomegranate</a></li>
+      <li><a href="#" onclick="openArt('fig');return false;">Fig</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Site</h4><ul>
+      <li><a href="#philosophy">Our Approach</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Cookie Policy</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 GreenHarvest. All rights reserved.</p>
+    <p>Written for farmers, by farmers 🌾</p>
+  </div>
+</footer>
+</div><!-- end main-wrap -->
+
+
+<!-- ════════ ARTICLE PAGES ════════ -->
+<div class="art-page" id="artPage">
+  <div class="topstrip"><span>🌿 GreenHarvest — Organic Farming Knowledge</span></div>
+  <header>
+    <div class="logo" onclick="goHome()">🌿 Green<em>Harvest</em></div>
+    <nav><ul><li><a href="#" onclick="goHome();return false;">← Back to Home</a></li></ul></nav>
+  </header>
+
+  <!-- MANGO -->
+  <div id="a-mango" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌳 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Growing Mango Organically: What the Textbooks Don't Tell You</h1>
+      <p class="art-pg-sub">A candid, experience-driven guide to cultivating mango trees without synthetic chemicals — and getting better results because of it.</p>
+      <div class="art-pg-meta"><span>📖 14 min read</span><span>🌿 GreenHarvest</span><span>Organic Methods</span></div>
+    </div>
+    <div class="art-content">
+      <p>Let's be honest — most mango cultivation guides read like they were written in a government office. Pages of tables and generic advice that rarely accounts for the fact that every orchard is different, every soil has its own character, and every farmer has constraints that a textbook writer never considered.</p>
+      <p>This guide is different. It is written for the farmer who wants to grow mangoes without depending on a chemical shop, who wants fruit that actually tastes like mango, and who wants a tree that will still be productive in thirty years without poisoning the ground beneath it.</p>
+
+      <h2>1. Understanding What a Mango Tree Actually Needs</h2>
+      <p>Before we talk about planting or pruning, it helps to understand the mango's natural logic. Mango trees evolved in tropical Asia — they are built for heat, seasonal dry spells, and occasional flooding. Their greatest need is not fertiliser or pesticide. It is <em>timing</em>. Get the timing right, and a mango tree almost grows itself.</p>
+      <p>The single most important thing to understand is this: mango trees flower in response to water stress followed by cool, dry weather. If your tree is sitting in constantly moist soil year-round, it will grow beautifully and never produce fruit. A period of deliberate water restriction before the flowering season is not neglect — it is management.</p>
+      <div class="callout"><strong>🔑 The Core Principle</strong><p>Mango trees need stress to flower. A dry period of 6–8 weeks before your region's traditional flowering season tells the tree it is time to reproduce. This is the most important thing an organic mango farmer can control.</p></div>
+
+      <h2>2. Choosing Your Variety</h2>
+      <p>This is a decision that will define your orchard for the next fifty years, so it deserves more thought than most farmers give it. Rather than chasing the most expensive or fashionable variety, choose based on three factors: your climate, your intended market, and disease resistance.</p>
+      <p>For export or premium fresh markets, Alphonso and Kesar are globally recognized and command strong prices. For processing into pulp, Totapuri's reliability and high fibre content makes it ideal. If you are in a region with high humidity and fungal disease pressure, look for local varieties that have adapted to those conditions over generations — they will outlast any imported variety.</p>
+      <table class="data-tbl">
+        <tr><th>Variety</th><th>Best Climate</th><th>Market</th><th>Disease Resistance</th></tr>
+        <tr><td>Alphonso</td><td>Dry tropical</td><td>Export / Premium</td><td>Moderate</td></tr>
+        <tr><td>Kesar</td><td>Semi-arid</td><td>Domestic / Export</td><td>Good</td></tr>
+        <tr><td>Totapuri</td><td>Tropical</td><td>Processing</td><td>Very good</td></tr>
+        <tr><td>Local/Heirloom</td><td>Your region</td><td>Local market</td><td>Excellent</td></tr>
+      </table>
+
+      <h2>3. Organic Soil Preparation</h2>
+      <p>In conventional farming, soil is treated as a medium that holds roots in place while you pour fertiliser on them. In organic farming, soil is the product. Get your soil right and the tree feeds itself. The difference is profound — both in cost savings and in long-term productivity.</p>
+      <p>Before you plant a single tree, invest in a soil test. Know your pH, your organic matter content, and your major and minor nutrient levels. A soil pH between 5.5 and 7.5 suits mangoes, but if you are at the extremes of this range, lime or sulphur applications a full season before planting will save you years of problems.</p>
+      <h3>Building the Planting Pit</h3>
+      <p>Dig a pit of at least 1 metre cubed. This is larger than most guides suggest, and for good reason. The disturbed, loose soil in a large pit encourages early root expansion, which directly translates to faster establishment and earlier fruiting. Fill the pit with a mixture of topsoil, mature compost, and well-rotted farm manure in roughly equal parts.</p>
+      <div class="callout"><strong>💡 The Trichoderma Secret</strong><p>Before filling your pit, mix Trichoderma viride or T. harzianum powder into your compost at about 10g per kg of compost. This beneficial fungus colonises the root zone, suppresses soil-borne pathogens like Phytophthora (which causes root rot), and actively improves nutrient availability. It is inexpensive, universally available, and one of the most overlooked tools in organic fruit growing.</p></div>
+
+      <h2>4. Planting and Establishment</h2>
+      <p>Plant at the beginning of your rainy season so the tree receives natural rainfall during its most vulnerable period. Space trees a minimum of 8 metres apart — the temptation to plant closer for a higher initial yield is understandable, but crowded trees suffer from poor airflow, which drives fungal disease pressure up significantly.</p>
+      <p>If you are using grafted plants, which we strongly recommend, ensure the graft union sits at least 10 centimetres above the soil line. Burying the graft union is one of the most common planting mistakes, and it creates an entry point for soil-borne diseases that can kill trees years later.</p>
+
+      <h2>5. Organic Nutrition Through the Tree's Life</h2>
+      <p>The organic approach to mango nutrition is not about replacing each chemical fertiliser with an organic equivalent. It is about building a living soil that cycles nutrients continuously, reducing your need to intervene at all. The goal is a self-sustaining system, not a permanent dependency on inputs of any kind.</p>
+      <h3>Compost and Mulch as the Foundation</h3>
+      <p>Apply 20–30 kg of well-composted organic matter per tree twice a year — once before the rains begin and once after harvest. Combine this with a thick mulch layer of dry leaves, straw, or wood chips around the base of the tree (keeping it away from the trunk). This mulch does several things simultaneously: it retains moisture, regulates soil temperature, suppresses weeds, and slowly decomposes to feed the soil biology.</p>
+      <h3>Bio-Fertilisers Worth Using</h3>
+      <p>Pseudomonas fluorescens as a soil drench improves phosphorus availability and also acts as a biological control against several bacterial diseases. Applied at planting and twice yearly thereafter, it has shown consistent results across diverse growing conditions worldwide. Azospirillum and Azotobacter inoculants fix atmospheric nitrogen in the root zone, partially replacing the need for nitrogen-rich organic inputs.</p>
+
+      <h2>6. Managing Pests and Disease Without Chemicals</h2>
+      <p>The single most effective pest management strategy in organic mango growing is diversity. An orchard that contains only mango trees is an invitation to pest outbreaks. Planting nitrogen-fixing trees between rows, maintaining ground cover, and allowing beneficial insects to establish themselves creates a natural balance that chemical spraying permanently disrupts.</p>
+      <h3>Mango Hopper — The Real Threat</h3>
+      <p>Mango hopper is the most economically damaging mango pest globally. Neem oil at 3–5ml per litre of water, sprayed at bud burst and again just before flowering, suppresses hopper populations effectively without harming pollinators. Neem also has a residual effect that deters the next generation from establishing on the same tree.</p>
+      <h3>Powdery Mildew on Flowers</h3>
+      <p>Powdery mildew can devastate a flowering crop. The organic control is a spray of diluted buttermilk (1 part to 9 parts water) applied in the evening. This sounds unusual, but the lactic acid bacteria in buttermilk outcompete the mildew fungus on leaf and flower surfaces. It works, it costs almost nothing, and it has been validated across multiple research trials in India and beyond.</p>
+
+      <h2>7. The Harvest and What Comes After</h2>
+      <p>A well-managed organic mango tree should begin bearing meaningfully in its fourth or fifth year and reach full production by year eight. At that point, expect 80–150 kg per tree annually depending on variety and management. The key post-harvest task is pruning — removing crossing branches, reducing canopy height, and thinning out crowded growth. This single practice, done consistently each year after harvest, is more responsible for long-term yield than almost anything else a farmer can do.</p>
+
+      <div class="tip-boxes">
+        <div class="tip-box"><div class="ti">🌿</div><strong>Mulch Always</strong><p>A permanent mulch layer is the single most impactful thing you can do for an established mango tree. It builds the soil while you sleep.</p></div>
+        <div class="tip-box"><div class="ti">✂️</div><strong>Prune Every Year</strong><p>Annual post-harvest pruning keeps the tree productive for decades. Skip it for two years in a row and you will spend five years recovering.</p></div>
+        <div class="tip-box"><div class="ti">💧</div><strong>Stress Before Flowering</strong><p>Withhold irrigation for 6–8 weeks before your expected flowering period. It feels counterintuitive but it is essential.</p></div>
+        <div class="tip-box"><div class="ti">🦠</div><strong>Use Trichoderma</strong><p>Add Trichoderma to every planting pit and to your compost. It is the most cost-effective soil health investment available to organic farmers.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANANA -->
+  <div id="a-banana" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌳 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Banana Farming Without Chemicals: A Practical Guide</h1>
+      <p class="art-pg-sub">Bananas are one of the most chemically intensive commercial crops in the world. Here is how to grow them differently — and better.</p>
+      <div class="art-pg-meta"><span>📖 9 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>Commercial banana production has a troubled relationship with chemistry. Monoculture plantations, heavy fungicide applications, and soil exhaustion have made banana farming increasingly expensive and environmentally damaging. But the banana plant itself is remarkably resilient — it is the farming system around it that has become fragile.</p>
+      <p>This guide is for the farmer growing bananas at any scale who wants to reduce or eliminate chemical inputs without sacrificing yield. The methods described here have been practised successfully across Asia, Africa, and Latin America in widely varying conditions.</p>
+      <h2>Why Organic Banana Farming Works</h2>
+      <p>Banana plants are naturally heavy feeders and fast growers. The conventional response to this is constant chemical fertilisation. The organic response is to work with the banana's biology — using its own spent plant material as the primary input, cycling nutrients back into the soil continuously.</p>
+      <p>After each harvest, the pseudostem (the main stalk) is chopped and left to decompose in place. A single pseudostem contains significant quantities of potassium, calcium, and micronutrients. Chopping and mulching this material returns it to the soil within four to six weeks. On a well-managed organic banana farm, this practice alone can replace 40–60% of the potassium inputs that would otherwise need to be applied.</p>
+      <div class="callout"><strong>🍌 The Pseudostem Cycle</strong><p>Never remove and discard a spent banana pseudostem. Chop it into 30cm sections, lay it flat between rows as mulch, and let it decompose in place. It is free fertiliser, moisture retention, and weed suppression all at once.</p></div>
+      <h2>Soil and Planting</h2>
+      <p>Bananas need deep, well-drained soil with high organic matter content and a pH between 6.0 and 7.5. Before planting, incorporate at least 10kg of mature compost per planting hole and inoculate with Mycorrhizal fungi — these create a symbiotic relationship with banana roots that dramatically improves water and phosphorus uptake.</p>
+      <p>Tissue culture plants are strongly recommended for organic production because they start disease-free, which gives the organic management system the best possible foundation. The premium paid for TC plants over suckers is recovered within the first harvest cycle through more uniform, higher-quality fruit.</p>
+      <h2>Organic Pest and Disease Management</h2>
+      <p>Fusarium wilt (Panama disease) is the most serious threat to banana production globally. There is no organic cure once a plant is infected. Prevention is everything — use resistant varieties where available, avoid moving soil from infected areas, and maintain high soil biological activity through compost applications and bio-inoculants, as healthy soil suppresses Fusarium naturally.</p>
+      <p>For nematode management, which is the other major challenge in banana, marigold interplanting has shown significant suppressive effects. Plant African marigold densely between rows, chop them in at the end of their growth cycle, and you will reduce nematode populations with no chemical input at all.</p>
+    </div>
+  </div>
+
+  <!-- AVOCADO -->
+  <div id="a-avocado" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🥑 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Avocado Cultivation: The Organic Way to Grow the World's Favourite Fruit</h1>
+      <p class="art-pg-sub">Avocado demand has never been higher. Here is how to meet it without chemicals — and why organic avocados command a significant price premium.</p>
+      <div class="art-pg-meta"><span>📖 10 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>The avocado has gone from a regional food to one of the world's most sought-after fruits in less than a generation. Demand continues to rise in Europe, North America, and across Asia. For a farmer willing to invest the time to establish an orchard and manage it organically, avocado represents one of the most financially rewarding long-term crops available.</p>
+      <p>Organic avocados sell for 30–60% more than conventionally grown fruit in most international markets. The certification process takes time, but the premium is persistent and growing.</p>
+      <h2>Climate and Site Selection</h2>
+      <p>Avocado is more climate-sensitive than most tropical fruit trees. It needs mild temperatures — ideally 15°C to 28°C — and is highly intolerant of frost and waterlogging. The roots are extremely sensitive to oxygen deprivation, which is why drainage is the single most critical site selection criterion. A site where water pools even briefly after heavy rain is unsuitable without major drainage work.</p>
+      <p>Altitudes between 1,000 and 2,500 metres in tropical regions often provide ideal conditions — cool nights that improve fruit quality, good drainage on slopes, and reduced disease pressure compared to humid lowlands. Kenya, Colombia, and parts of southern India have emerged as major organic avocado producers precisely because these elevation conditions exist there.</p>
+      <h2>Varieties for Organic Production</h2>
+      <p>Hass is the dominant commercial variety globally, accounting for around 80% of world trade. It is well-suited to organic production because of its thick, pebbly skin which gives it good post-harvest handling resilience. For humid tropical climates where Hass struggles with fungal disease, local varieties adapted to those conditions are a better starting point even if they command lower prices initially.</p>
+      <h2>Organic Soil Management</h2>
+      <p>Avocado roots are shallow and sensitive. They occupy the top 60cm of soil and spread far beyond the canopy. This means that what you do to the soil surface across your entire orchard affects your trees — not just what you apply at the base. A permanent ground cover of leguminous plants under and between trees adds nitrogen continuously, prevents erosion, and builds organic matter year after year.</p>
+      <div class="callout"><strong>🌿 Avocado's Greatest Enemy</strong><p>Phytophthora root rot is responsible for more avocado tree deaths than all other causes combined. Trichoderma harzianum applied as a soil drench twice yearly is the most effective organic preventive measure available. Combined with excellent drainage and avoiding any soil compaction near the root zone, it can prevent the disease in most situations.</p></div>
+      <h2>Pollination and Fruit Set</h2>
+      <p>Avocado flowers have an unusual behaviour — the same flower opens as female in the morning and male in the afternoon on alternating days. This means that planting two complementary varieties (Type A and Type B) close together is essential for good fruit set. Without cross-pollination, fruit set can be as low as 1% even in a healthy, flowering tree. With good cross-pollination and a healthy bee population, fruit set rises to 3–8% — which is all a productive avocado tree needs.</p>
+    </div>
+  </div>
+
+  <!-- MORINGA -->
+  <div id="a-moringa" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌱 Superfood Tree Guide</div>
+      <h1 class="art-pg-title">Moringa: The Tree That Feeds, Heals, and Enriches Your Soil</h1>
+      <p class="art-pg-sub">No tree on earth offers more per square metre of land than Moringa. This is everything you need to know to grow it well.</p>
+      <div class="art-pg-meta"><span>📖 8 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>If you had to choose one tree to plant in a food-insecure region with degraded soil and unreliable rainfall, most agronomists who know it would choose Moringa. It grows in near-desert conditions. Its leaves contain more protein than most legumes. Its roots and seed cake improve soil structure. And it can be harvested multiple times per year.</p>
+      <p>Moringa oleifera is sometimes called the "miracle tree" — and while that label is often over-applied in the wellness industry, the plant's actual agricultural and nutritional credentials are genuinely remarkable.</p>
+      <h2>Why Moringa Suits Organic Farming Perfectly</h2>
+      <p>Moringa requires almost no inputs to grow well. It fixes no nitrogen itself, but its deep taproot mines nutrients from subsoil layers that shallow-rooted crops cannot access, then deposits them on the surface through leaf fall. When used as a component of an agroforestry system — planted in rows between vegetable beds or annual crops — it functions as a living fertiliser factory.</p>
+      <p>Pest pressure on Moringa is genuinely low. The leaves contain isothiocyanates and other compounds that most insects find unpalatable. In over a decade of observing Moringa cultivation across different continents, serious pest damage is rare. This makes it one of the easiest crops to manage organically.</p>
+      <h2>Cultivation Basics</h2>
+      <p>Moringa can be grown from seed or from cuttings. Cuttings of 1–2 metres in length taken from mature stems root readily and produce a fruiting tree faster than seedlings. Plant at any spacing depending on your objective — 2.5 metres for leaf production, 5 metres for drumstick (pod) production, or 10+ metres as an agroforestry component among other crops.</p>
+      <p>The tree grows astonishingly fast — up to 3 metres in its first year in good conditions. For leaf production, cut back to 1 metre every two to three months to maintain bushy, manageable growth and maximise leaf yield per plant. For pod production, allow the tree to develop a full canopy structure and prune only to remove dead wood and crossing branches.</p>
+      <div class="callout"><strong>🌿 Moringa as a Bio-Fertiliser</strong><p>A fermented extract of fresh Moringa leaves diluted 1:30 with water and used as a foliar spray has been shown in multiple studies to increase crop yields by 20–35% when applied to vegetables and cereals. The mechanism is not fully understood, but the practical results are consistent. It is free, it is natural, and it works.</p></div>
+      <h2>Nutritional and Commercial Value</h2>
+      <p>Fresh Moringa leaves contain significant quantities of Vitamin C, Vitamin A, calcium, potassium, and all essential amino acids. They can be eaten fresh, cooked as a vegetable, or dried and powdered for a supplement that has found a substantial global market. The dried leaf powder commands strong prices in health food markets across Europe, North America, and Japan.</p>
+      <p>Moringa seed oil — pressed from the seeds — is used in cosmetics and cooking. The seed cake remaining after oil extraction is an excellent organic soil amendment with strong water-clarifying properties. Every part of this tree has value. That is genuinely rare in agriculture.</p>
+    </div>
+  </div>
+
+  <!-- COCONUT -->
+  <div id="a-coconut" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌳 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Coconut Cultivation: Organic Methods That Actually Work</h1>
+      <p class="art-pg-sub">A coconut palm planted today will feed your grandchildren. Here is how to give it the best possible start — without a single synthetic input.</p>
+      <div class="art-pg-meta"><span>📖 10 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>The coconut palm is one of humanity's oldest and most important cultivated plants. Across tropical coastlines worldwide, it has provided food, fibre, oil, timber, and income for generations. A well-sited and well-managed coconut palm will produce for 60 to 80 years — making the decisions made at planting among the most consequential a farmer ever takes.</p>
+      <h2>Selecting Your Seedling</h2>
+      <p>The quality of your seedling determines the productivity of your orchard for the next half century. Select nuts from high-yielding mother palms that are 10 to 12 months old, fully mature, and have a round or oval shape — elongated nuts tend to produce less productive palms. Germinate nuts in a shaded nursery bed in sand, checking after 3 months for sprouts. Transplant only seedlings that are vigorous and symmetrical.</p>
+      <h2>Organic Nutrition for Coconut</h2>
+      <p>Coconut is one of the most responsive crops to organic matter application. Annual applications of 30–50kg of compost combined with 2kg of wood ash (for potassium, which coconuts need in large quantities) and vermicompost have produced yield improvements of 25–40% in farms that previously received no organic inputs.</p>
+      <p>One of the most interesting and well-documented inputs for coconut is common salt — sodium chloride. Research across Kerala, Sri Lanka, and the Philippines has consistently shown that 1–2kg of salt applied to the root zone of each palm twice yearly increases nut set and improves copra quality. The mechanism involves sodium's role in replacing potassium in certain metabolic functions, essentially stretching the palm's potassium supply further. For inland palms especially, this is worth trying.</p>
+      <div class="callout"><strong>💡 Intercropping Under Coconut</strong><p>The space beneath coconut palms — which receives 50–70% of full sunlight — is some of the most underused agricultural land in the tropics. Turmeric, ginger, pineapple, and cacao all thrive in this environment. A well-managed coconut-based agroforestry system can generate 3–5 times more income per hectare than coconuts alone.</p></div>
+    </div>
+  </div>
+
+  <!-- PAPAYA -->
+  <div id="a-papaya" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌳 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Papaya: How to Get Your First Harvest in 9 Months, Organically</h1>
+      <p class="art-pg-sub">No other fruit gives you a return on investment this quickly. Here is how to make the most of it without chemicals.</p>
+      <div class="art-pg-meta"><span>📖 7 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>Papaya is the fastest path from planting to income in tropical fruit production. Under good conditions with organic management, a papaya plant can be fruiting within 9 months and generating regular income for 3 to 4 years before needing replacement. For a farmer who needs cash flow while longer-term crops establish, it is hard to beat.</p>
+      <h2>The Virus Challenge</h2>
+      <p>Papaya Ring Spot Virus is the most serious constraint on papaya production worldwide. It spreads through aphids and can devastate an entire planting within months of establishment. The organic management strategy is built around three principles: start clean, suppress vectors, and remove infected plants immediately before the virus spreads further.</p>
+      <p>Starting with certified virus-free tissue culture seedlings is the most important investment you can make. Reflective silver mulch on the soil surface confuses aphids — they cannot find the plant to land on, dramatically reducing virus transmission. Neem oil sprayed every 10 days from establishment helps suppress aphid populations further.</p>
+      <h2>Organic Soil and Nutrition</h2>
+      <p>Papaya is a gross feeder with shallow roots. It responds dramatically to soil organic matter and will almost certainly disappoint on poor soils regardless of how much fertiliser is applied. Before planting, dig a pit 60cm cubed and fill with a 50/50 mix of topsoil and mature compost. Apply 5kg of compost per plant every 6 weeks during the growing season, and mulch the root zone heavily to maintain soil moisture and temperature.</p>
+      <div class="callout"><strong>⚠️ Never Let Papaya Sit in Water</strong><p>Papaya root systems are highly susceptible to Phytophthora collar rot in waterlogged conditions. Even 24 hours of standing water can fatally damage a plant. Raised beds or mounded planting positions are strongly recommended in areas with heavy rainfall or poorly draining soils.</p></div>
+    </div>
+  </div>
+
+  <!-- JACKFRUIT -->
+  <div id="a-jackfruit" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌳 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Jackfruit: The Low-Maintenance Giant With Enormous Potential</h1>
+      <p class="art-pg-sub">Jackfruit asks for almost nothing and gives back enormously. Here is how to grow it right.</p>
+      <div class="art-pg-meta"><span>📖 9 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>Among all tropical fruit trees, jackfruit may be the most forgiving. It tolerates poor soils, periodic drought, high humidity, and benign neglect with a generosity that no other large-fruiting tree can match. A well-sited jackfruit tree demands very little from a farmer while producing fruit that can weigh 50 kilograms — and doing so for decades.</p>
+      <p>The global market for jackfruit has grown remarkably over the past decade, driven largely by its adoption as a meat substitute in vegetarian and vegan cooking. Young, unripe jackfruit has a fibrous texture that mimics pulled pork or chicken with remarkable fidelity. This has opened markets in Europe and North America that simply did not exist ten years ago.</p>
+      <h2>Growing Organically — The Easy Case</h2>
+      <p>Jackfruit's natural resilience means that organic management is genuinely straightforward. The tree evolved in conditions where no one was applying fertilisers or pesticides, and its default growth habit reflects that. Annual compost applications of 15–20kg per mature tree and a consistent mulch layer are the primary inputs needed for good production.</p>
+      <p>The most valuable organic input for jackfruit is green manure cropped from the spaces between young trees. Legumes like Gliricidia or Sesbania, chopped and incorporated into the soil annually, can supply all the nitrogen a developing jackfruit orchard needs for the first 5 years while simultaneously building the organic matter content of the soil.</p>
+      <div class="callout"><strong>🌍 Market Timing</strong><p>The global young jackfruit market — primarily for unripe fruit sold as a meat substitute — commands significantly higher prices than ripe fruit in many regions. Understanding this distinction before harvest can dramatically affect the economics of a jackfruit enterprise. Young fruit harvested at 10–12 weeks after fruit set is the product that western food manufacturers want.</p></div>
+    </div>
+  </div>
+
+  <!-- GUAVA -->
+  <div id="a-guava" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌳 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Guava: The Toughest Fruit Tree You'll Ever Love</h1>
+      <p class="art-pg-sub">Guava thrives where other fruit trees give up. Here is how to manage it for maximum yield without a single chemical input.</p>
+      <div class="art-pg-meta"><span>📖 8 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>Guava has a reputation for being difficult to manage, and it earns that reputation for one specific reason: without regular pruning, a guava orchard becomes an impenetrable thicket within a few seasons. But manage its vigorous growth well, and guava will reward you with two to three crops per year, reliable yields even in drought conditions, and very little pest pressure compared to most fruit trees.</p>
+      <h2>The Pruning-First Philosophy</h2>
+      <p>Everything in guava management revolves around pruning. Guavas fruit on new growth, which means the more you encourage new shoots, the more you fruit. After each harvest cycle, cut back the main fruiting branches by one-third. This sounds aggressive but the tree responds with vigorous new growth that becomes your next fruiting wood within 8–10 weeks.</p>
+      <p>Maintain an open canopy shape — light penetration to the inner branches is critical for fruit quality and for managing the humid microclimate that encourages fungal disease. In humid regions especially, dense canopies create ideal conditions for guava wilt, which is the most serious disease this crop faces.</p>
+      <h2>Organic Nutrition</h2>
+      <p>Guava is a moderate feeder that responds well to compost and declines on compacted, waterlogged soils. Apply 10–15kg of compost per tree twice yearly and maintain a mulch layer that extends to the canopy drip line. The guava's root system is shallow and wide — nutrients and moisture placed at the surface are more accessible to the tree than deep applications.</p>
+      <div class="callout"><strong>🏆 Guava's Hidden Advantage</strong><p>Guava Vitamin C content is among the highest of any common fruit — 4 to 5 times higher than orange. In markets where nutritional claims drive purchasing decisions, this is a genuine selling point that organic guava farmers can use to distinguish their fruit from conventionally grown alternatives.</p></div>
+    </div>
+  </div>
+
+  <!-- POMEGRANATE -->
+  <div id="a-pomegranate" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌳 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Pomegranate Farming: Ancient Fruit, Modern Organic Approach</h1>
+      <p class="art-pg-sub">Pomegranate has been farmed for 5,000 years. The organic methods that work best today are not far removed from what worked then.</p>
+      <div class="art-pg-meta"><span>📖 9 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>Pomegranate is a drought-tolerant, long-lived crop that was being cultivated organically by default long before the term existed. It evolved in the semi-arid regions of Persia and the Himalayas — conditions that select for resilience over dependence on inputs. Modern organic management of pomegranate simply formalises what traditional farmers in those regions have always known.</p>
+      <h2>Why Pomegranate Suits Organic Systems</h2>
+      <p>Pomegranate's deep root system, drought tolerance, and generally low pest pressure make it a natural fit for organic management. The crop's most serious challenges — fruit cracking, bacterial blight, and fruit boring insects — are all manageable through cultural and biological methods without synthetic chemistry.</p>
+      <p>Fruit cracking, which is the most common quality problem, is almost entirely a water management issue. Irregular irrigation — long dry periods followed by sudden heavy watering — causes rapid fruit expansion that the skin cannot accommodate. A consistent, moderate irrigation regime through the fruit-filling period prevents cracking far more effectively than any spray programme.</p>
+      <h2>Soil and Organic Inputs</h2>
+      <p>Pomegranate tolerates poor, rocky, alkaline soils better than almost any other fruit crop. But tolerance is not the same as preference — on deep, well-amended soils with consistent compost applications, the same variety will produce fruit twice the size and with significantly better colour and flavour than on marginal land.</p>
+      <p>Annual applications of 10–15kg compost per tree, combined with a green manure cover crop between rows that is chopped and incorporated before flowering, provides all the macronutrients a well-established pomegranate orchard needs. Supplementing with 500g of bone meal per tree per year addresses phosphorus needs without chemical fertilisers.</p>
+      <div class="callout"><strong>🌺 Flower Drop vs Fruit Set</strong><p>Pomegranate produces far more flowers than it can set as fruit. Bisexual flowers with a swollen base below the petals will set fruit. Male-only flowers with a narrow base will drop. This is normal — do not mistake normal flower drop for a pollination failure. A good pomegranate crop requires only 5–10% of flowers to set fruit.</p></div>
+    </div>
+  </div>
+
+  <!-- FIG -->
+  <div id="a-fig" style="display:none">
+    <div class="art-pg-header">
+      <button class="back-btn" onclick="goHome()">← Back to Articles</button>
+      <div class="art-badge">🌳 Organic Fruit Tree Guide</div>
+      <h1 class="art-pg-title">Fig Tree Cultivation: Drought-Tolerant, Chemical-Free and Rewarding</h1>
+      <p class="art-pg-sub">The fig is one of the oldest cultivated fruits and one of the easiest to grow organically. Here is everything you need to know.</p>
+      <div class="art-pg-meta"><span>📖 8 min read</span><span>🌿 GreenHarvest</span></div>
+    </div>
+    <div class="art-content">
+      <p>The fig tree has been cultivated for longer than any other fruit tree. Archaeobotanical evidence suggests cultivation began at least 11,000 years ago — predating wheat and barley. That extraordinary history is not coincidental. The fig is simply one of the most reliable, productive, and low-maintenance food plants that humans have ever domesticated.</p>
+      <p>Growing figs organically is not a compromise — it is the natural state of the crop. Figs have low synthetic fertiliser requirements, minimal serious pest pressure in most climates, and produce abundantly on soils where more demanding crops would fail.</p>
+      <h2>Understanding the Fig's Unusual Biology</h2>
+      <p>What we call a fig "fruit" is technically a syconium — an inverted flower structure where hundreds of tiny flowers develop inside the fleshy receptacle we eat. In some traditional fig varieties, pollination requires a symbiotic relationship with a specific fig wasp species. Modern commercial varieties are typically parthenocarpic — they produce fruit without pollination — which eliminates this complexity entirely.</p>
+      <h2>Organic Growing Basics</h2>
+      <p>Figs are among the most drought-tolerant of all fruit trees. Their deep root systems can access moisture far below the surface in established trees, making them suitable for dryland organic farming systems where irrigation is limited or unavailable. Young trees need supplemental water for the first 2–3 years, but once established they can survive on rainfall alone in most climates where they are adapted.</p>
+      <p>For organic nutrition, figs respond primarily to potassium. Wood ash applied at 1–2kg per tree twice yearly is the simplest and most cost-effective potassium source for organic growers. Combined with annual compost applications, this is sufficient to maintain productivity in most situations.</p>
+      <div class="callout"><strong>🌞 The Drying Opportunity</strong><p>Dried figs command 3–5 times the price of fresh figs in most markets and have a shelf life of 12+ months compared to fresh figs' 2–3 days. If you have consistent hot, dry weather during harvest season, sun-drying figs on mesh racks is a zero-cost value addition that transforms the economics of a fig enterprise entirely.</p></div>
+    </div>
+  </div>
+
+</div><!-- end art-page -->
+
+<!-- COOKIE BANNER -->
+<div id="cookieBanner">
+  <div class="ck-left">
+    <div class="ck-icon">🍪</div>
+    <div class="ck-text">
+      <h4>We use cookies</h4>
+      <p>We use cookies to improve your experience and show relevant content. <a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></p>
+    </div>
+  </div>
+  <div class="ck-btns">
+    <button class="ck-settings" onclick="openCkPanel()">⚙️ Settings</button>
+    <button class="ck-reject" onclick="rejectCk()">Reject All</button>
+    <button class="ck-accept" onclick="acceptAllCk()">✅ Accept All</button>
+  </div>
+</div>
+
+<div id="ckPanel">
+  <div class="ckp-head">
+    <h3>🍪 Cookie Preferences</h3>
+    <button class="ckp-close" onclick="closeCkPanel()">✕</button>
+  </div>
+  <div class="ck-row">
+    <div class="ck-row-info"><h4>Essential Cookies <span class="always-on">Always On</span></h4><p>Required for basic site functionality. Cannot be disabled.</p></div>
+    <label class="toggle"><input type="checkbox" checked disabled><span class="tslider"></span></label>
+  </div>
+  <div class="ck-row">
+    <div class="ck-row-info"><h4>Analytics Cookies</h4><p>Help us understand which articles are most useful. All data is anonymous.</p></div>
+    <label class="toggle"><input type="checkbox" id="ck-analytics" checked><span class="tslider"></span></label>
+  </div>
+  <div class="ck-row">
+    <div class="ck-row-info"><h4>Advertising Cookies</h4><p>Used by Google AdSense to show relevant ads. Enabling this supports free access to all our guides.</p></div>
+    <label class="toggle"><input type="checkbox" id="ck-ads" checked><span class="tslider"></span></label>
+  </div>
+  <div class="ck-row">
+    <div class="ck-row-info"><h4>Functional Cookies</h4><p>Remember your reading preferences for a better experience on return visits.</p></div>
+    <label class="toggle"><input type="checkbox" id="ck-func" checked><span class="tslider"></span></label>
+  </div>
+  <div class="ckp-btns">
+    <button class="ckp-save" onclick="saveCkPrefs()">💾 Save Preferences</button>
+    <button class="ckp-all" onclick="acceptAllCk()">✅ Accept All</button>
+  </div>
+</div>
+<div id="ckToast"></div>
+
+<script>
+const articles = ['mango','banana','coconut','papaya','jackfruit','avocado','guava','pomegranate','fig','moringa'];
+
+function openArt(id) {
+  document.getElementById('mainWrap').classList.add('off');
+  document.getElementById('artPage').classList.add('on');
+  articles.forEach(a => document.getElementById('a-'+a).style.display='none');
+  const el = document.getElementById('a-'+id);
+  if(el) el.style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goHome() {
+  document.getElementById('mainWrap').classList.remove('off');
+  document.getElementById('artPage').classList.remove('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+
+// Scroll reveal
+const ro=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('on'),i*90);});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// Cookies
+window.addEventListener('load',()=>{
+  if(localStorage.getItem('ck_consent')) document.getElementById('cookieBanner').style.display='none';
+});
+function acceptAllCk(){
+  localStorage.setItem('ck_consent','all');
+  hideBanner(); showToast('✅ All cookies accepted!');
+}
+function rejectCk(){
+  localStorage.setItem('ck_consent','essential');
+  hideBanner(); showToast('Cookies preferences saved.');
+}
+function openCkPanel(){
+  document.getElementById('cookieBanner').style.display='none';
+  document.getElementById('ckPanel').classList.add('on');
+}
+function closeCkPanel(){
+  document.getElementById('ckPanel').classList.remove('on');
+  if(!localStorage.getItem('ck_consent')) document.getElementById('cookieBanner').style.display='flex';
+}
+function saveCkPrefs(){
+  localStorage.setItem('ck_consent','custom');
+  localStorage.setItem('ck_analytics',document.getElementById('ck-analytics').checked);
+  localStorage.setItem('ck_ads',document.getElementById('ck-ads').checked);
+  localStorage.setItem('ck_func',document.getElementById('ck-func').checked);
+  document.getElementById('ckPanel').classList.remove('on');
+  showToast('💾 Preferences saved!');
+}
+function hideBanner(){
+  const b=document.getElementById('cookieBanner');
+  b.style.transition='transform .3s ease';
+  b.style.transform='translateY(100%)';
+  setTimeout(()=>b.style.display='none',320);
+  document.getElementById('ckPanel').classList.remove('on');
+}
+function showToast(msg){
+  const t=document.getElementById('ckToast');
+  t.textContent=msg; t.style.display='block';
+  setTimeout(()=>t.style.display='none',3000);
+}
+</script>
+</body>
+</html>
